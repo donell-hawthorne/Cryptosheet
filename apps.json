@@ -1,0 +1,24 @@
+{
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+    {
+      "description": "This app uses the Coinmarketcap and Google Drive Python APIs to update a tracker I created."
+    },
+{
+  "keywords": [
+    "Python3",
+    "Coinmarketcap API",
+    "Google Drive API",
+    "spreadsheet",
+    "cryptocurrency",
+    ]
+}, 
+{
+  "name": "Cryptosheet Updater"
+},
+{
+  "repository": "https://github.com/donell-hawthorne/Cryptosheet"
+}
