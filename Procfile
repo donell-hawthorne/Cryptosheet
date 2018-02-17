@@ -1,1 +1,1 @@
-clock: python3 cryptosheet.py
+clock: python cryptosheet.py
