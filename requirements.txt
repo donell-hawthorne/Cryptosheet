@@ -12,3 +12,4 @@ requests-cache==0.4.13
 rsa==3.4.2
 six==1.11.0
 urllib3==1.22
+APScheduler==3.0.0
