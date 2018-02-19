@@ -17,26 +17,24 @@ sheet = client.open("Cryptosheet").sheet1
 
 def coin_ticker():
 #loop to pull ticker information as needed
-    my_coins = ("Bitcoin", "Zcash", "Clams", "Dogecoin"); #define tuple of coins to get market data for
+    my_coins = ("Bitcoin", "Zcash", "Clams", "Dogecoin", "Ethereum"); #define tuple of coins to get market data for
     for coins in my_coins:
         coin_data = coinmarketcap.ticker(coins) #retrieve ticker information for coin
         stripped_coin_data = coin_data[0] #put ticker info in usable format
         for coins in my_coins:
             if coins.lower() and stripped_coin_data['id'] == "bitcoin": #identify coin and dictionary to update
-                #bitcoin = {"symbol": "BTC", "price_usd": 0, "price_btc": 1} #blank dictionary for ticker info
-                sheet.update_cell(4, 8, stripped_coin_data['price_usd'])  #update dictionary information
+                sheet.update_cell(4, 8, stripped_coin_data['price_usd'])  #update cell on Google spreadsheet
             elif coins.lower() and stripped_coin_data['id'] == "zcash":
-                #zcash = {"symbol": "ZEC", "price_usd": 0, "price_btc": 0}
                 sheet.update_cell(5, 8, stripped_coin_data['price_usd'])
                 sheet.update_cell(5, 7, stripped_coin_data['price_btc'])
             elif coins.lower() and stripped_coin_data['id'] == "clams":
-                #clams = {"symbol": "CLAM", "price_usd": 0, "price_btc": 0}
                 sheet.update_cell(6, 8, stripped_coin_data['price_usd'])
                 sheet.update_cell(6, 7, stripped_coin_data['price_btc'])
             elif coins.lower() and stripped_coin_data['id'] == "dogecoin":
-                #dogecoin = {"symbol": "DOGE", "price_usd": 0, "price_btc": 0}
                 sheet.update_cell(7, 8, stripped_coin_data['price_usd'])
                 sheet.update_cell(7, 7, stripped_coin_data['price_btc'])
+            elif coins.lower() and stripped_coin_data['id'] == "ethereum":
+                sheet.update_cell(27, 2, stripped_coin_data['price_usd'])
             else:
                 print("No Update")
 
